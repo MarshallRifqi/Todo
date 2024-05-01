@@ -1,12 +1,13 @@
-/* tyler css */
+
 :root {
 	--primary: #EA40A4;
-	--business: #3A82EE;
+	--business: #556FB5;
 	--personal: var(--primary);
 	--light: #EEE;
 	--grey: #888;
 	--dark: #313154;
-	--danger: #ff5b57;
+	--danger: #D35D6E;
+	--work: #80669d;
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -41,16 +42,22 @@ section {
 	padding-right: 1.5em;
 }
 
+.title-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 h3 {
 	color: var(--dark);
-	font-size: 1rem;
-	font-weight: 400;
+	/* font-size: 1em; */
+	font-weight: 600;
 	margin-bottom: 0.5rem;
 }
 
 h4 {
 	color: var(--grey);
-	font-size: 0.875rem;
+	font-size: 0.875em;
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 }
@@ -73,6 +80,18 @@ h4 {
 }
 
 .create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
+}
+
+.create-todo input[type="time"] {
 	display: block;
 	width: 100%;
 	font-size: 1.125rem;
@@ -114,14 +133,14 @@ input[type="checkbox"] {
 	justify-content: center;
 	width: 20px;
 	height: 20px;
-	border-radius: 50%;
-	border: 2px solid var(--business);
-	box-shadow: var(--business-glow);
+	border-radius: 50%; 
+	border: 2px solid var(--work);
+	box-shadow: var(--work-glow);
 }
 
 .bubble.personal {
-	border-color: var(--personal);
-	box-shadow: var(--personal-glow);
+	border-color: var(--work);
+	box-shadow: var(--work-glow);
 }
 
 .bubble::after {
@@ -130,15 +149,16 @@ input[type="checkbox"] {
 	opacity: 0;
 	width: 0px;
 	height: 0px;
-	background-color: var(--business);
-	box-shadow: var(--business-glow);
-	border-radius: 50%;
+	background-color: var(--work);
+	box-shadow: var(--work-glow);
+	/* border-radius: 50%; */
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 	transition: 0.2s ease-in-out;
 }
 
 .bubble.personal::after {
-	background-color: var(--personal);
-	box-shadow: var(--personal-glow);
+	background-color: var(--work);
+	box-shadow: var(--work-glow);
 }
 
 input:checked ~ .bubble::after {
@@ -159,9 +179,9 @@ input:checked ~ .bubble::after {
 	font-size: 1.125rem;
 	padding: 1rem 1.5rem;
 	color: #FFF;
-	background-color: var(--primary);
+	background-color: var(--work);
 	border-radius: 0.5rem;
-	box-shadow: var(--personal-glow);
+	box-shadow: var(--work-glow);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -172,6 +192,7 @@ input:checked ~ .bubble::after {
 
 .todo-list .list {
 	margin: 1rem 0;
+	/* margin-top: 100px; */
 } 
 
 .todo-list .todo-item {
@@ -226,11 +247,33 @@ input:checked ~ .bubble::after {
 	background-color: var(--danger);
 }
 .todo-item .actions .update {
-	background-color: var(--grey);
+	background-color: var(--business);
+	margin-right: 5px;
 }
 
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
 }
-/* end of tyler css */
+
+main{
+	/* border: 0px solid black; */
+	/* display: ; */
+	margin: 0 auto;
+	/* border: 10px solid black ; */
+	width: 990px;
+}
+
+#time-style{
+	color: var(--grey);
+}
+
+.create-todo {
+	margin-bottom: 60px;
+	font-weight: 500;
+}
+
+
+
+
+

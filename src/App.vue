@@ -50,14 +50,30 @@ onMounted(() => {
 	todos.value = JSON.parse(localStorage.getItem('todos')) || []
 })
 
+// const editTodo = (todo) => {
+// 	const newTitle = prompt('Edit Todo Title:', todo.content)
+// 	const newTime = prompt('Edit Todo Time:', todo.time)
+// 	if (newTitle !== null) {
+// 		todo.content = newTitle.trim()
+// 		todo.time = newTime.trim()
+// 	}
+// }
+
 const editTodo = (todo) => {
-	const newTitle = prompt('Edit Todo Title:', todo.content)
-	const newTime = prompt('Edit Todo Time:', todo.time)
-	if (newTitle !== null) {
-		todo.content = newTitle.trim()
-		todo.time = newTime.trim()
-	}
+    let newTitle, newTime;
+
+    do {
+        newTitle = prompt('Edit Todo Title:', todo.content);
+    } while (newTitle === null || newTitle.trim() === "");
+
+    do {
+        newTime = prompt('Edit Todo Time:', todo.time);
+    } while (newTime === null || newTime.trim() === "");
+
+    todo.content = newTitle.trim();
+    todo.time = newTime.trim();
 }
+
 
 // clock
 
